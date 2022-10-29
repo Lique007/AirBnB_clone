@@ -4,9 +4,11 @@ from datetime import datetime
 
 class BaseModel:
     def __init__(self, *args, **kwargs):
+        from models import storage
         if kwargs == {}:
             self.id = str(uuid4())
             self.created_at = self.updated_at = datetime.now()
+            storage.new(self)
         else:
             for key, value in kwargs.items():
                 if key == '__class__':
@@ -19,7 +21,9 @@ class BaseModel:
         return f'[{type(self).__name__}] ({self.id}) {self.__dict__}'
 
     def save(self):
+        from models import storage
         self.updated_at = datetime.now()
+        storage.save()
 
     def to_dict(self):
         my_dict = self.__dict__.copy()
