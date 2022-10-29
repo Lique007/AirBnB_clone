@@ -28,3 +28,14 @@ for key in class_list:
 
 commands = ["do show",
             "do destroy",
+            "do_all",
+            "do update",
+            "do_count"
+            ]
+
+class HBNBCommand(cmd.Cmd):
+
+    prompt = "(hbnb) "
+
+    def emptyline(self):
+        return False
