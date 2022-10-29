@@ -9,6 +9,6 @@ class State(BaseModel):
 
     name = ""
 
-    def __init__(self, *args, **kwargs):
-        """class constructor"""
-        super().__init__(*args, **kwargs)
+    #def __init__(self, *args, **kwargs):
+     #   """class constructor"""
+      #  super().__init__(*args, **kwargs)

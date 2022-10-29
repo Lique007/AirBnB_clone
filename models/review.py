@@ -11,6 +11,6 @@ class Review(BaseModel):
     user_id = ""
     text = ""
 
-    def __init__(self, *args, **kwargs):
-        """class constructor"""
-        super().__init__(*args, **kwargs)
+   # def __init__(self, *args, **kwargs):
+    #    """class constructor"""
+     #   super().__init__(*args, **kwargs)
